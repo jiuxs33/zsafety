@@ -30,4 +30,5 @@ public class UserController {
 		user.setName(name);
 		return service.findUserByName(user).get(0);
 	}
+	
 }
