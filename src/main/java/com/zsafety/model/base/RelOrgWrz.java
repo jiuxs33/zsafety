@@ -9,37 +9,45 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 流域机构与水资源分区关系表
+ * */
 @Entity
-@Table(name="rel_adma_file")
-public class RelAdmaFile {
+@Table(name="rel_org_wrz")
+public class RelOrgWrz {
+
+	public RelOrgWrz() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="org_cd",columnDefinition="char(9)")
+	@Column(name="wrz_cd",length=7)
+	private String wrzCd;
+	
+	@Column(name="org_cd",length=9,nullable=false)
 	private String orgCd;
 	
-	@Column(name="file_cd",columnDefinition="char(32)",nullable=false)
-	private String fileCd;
 	@Column(name="ts",nullable=false)
 	private Date ts;
-	@Column(name="nt",columnDefinition="varchar(256)")
+	
+	@Column(name="nt",length=256)
 	private String nt;
-	
-	
+
+	public String getWrzCd() {
+		return wrzCd;
+	}
+
+	public void setWrzCd(String wrzCd) {
+		this.wrzCd = wrzCd;
+	}
+
 	public String getOrgCd() {
 		return orgCd;
 	}
 
 	public void setOrgCd(String orgCd) {
 		this.orgCd = orgCd;
-	}
-
-	public String getFileCd() {
-		return fileCd;
-	}
-
-	public void setFileCd(String fileCd) {
-		this.fileCd = fileCd;
 	}
 
 	public Date getTs() {
@@ -57,9 +65,4 @@ public class RelAdmaFile {
 	public void setNt(String nt) {
 		this.nt = nt;
 	}
-
-	public RelAdmaFile() {
-		
-	}
-
 }

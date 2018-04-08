@@ -10,36 +10,41 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="rel_adma_file")
-public class RelAdmaFile {
+@Table(name="rel_gws_stat")
+public class RelGwsStat {
 
+	public RelGwsStat() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="org_cd",columnDefinition="char(9)")
-	private String orgCd;
+	@Column(name="stcd",columnDefinition="char(8)")
+	private String stcd;
 	
-	@Column(name="file_cd",columnDefinition="char(32)",nullable=false)
-	private String fileCd;
+	@Column(name="gws_cd",columnDefinition="char(12)",nullable=false)
+	private String gwsCd;
+	
 	@Column(name="ts",nullable=false)
 	private Date ts;
+	
 	@Column(name="nt",columnDefinition="varchar(256)")
 	private String nt;
-	
-	
-	public String getOrgCd() {
-		return orgCd;
+
+	public String getGwsCd() {
+		return gwsCd;
 	}
 
-	public void setOrgCd(String orgCd) {
-		this.orgCd = orgCd;
+	public void setGwsCd(String gwsCd) {
+		this.gwsCd = gwsCd;
 	}
 
-	public String getFileCd() {
-		return fileCd;
+	public String getStcd() {
+		return stcd;
 	}
 
-	public void setFileCd(String fileCd) {
-		this.fileCd = fileCd;
+	public void setStcd(String stcd) {
+		this.stcd = stcd;
 	}
 
 	public Date getTs() {
@@ -56,10 +61,6 @@ public class RelAdmaFile {
 
 	public void setNt(String nt) {
 		this.nt = nt;
-	}
-
-	public RelAdmaFile() {
-		
 	}
 
 }

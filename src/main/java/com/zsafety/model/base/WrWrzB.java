@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 水资源分区基本信息表
+ * */
 @Entity
 @Table(name="wr_wrz_b")
 public class WrWrzB {
